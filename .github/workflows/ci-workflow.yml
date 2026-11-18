@@ -24,6 +24,8 @@ jobs:
         continue-on-error: true
       - name: Run tests
         run: uv run pytest
+      - name: Dead code detection
+        run: uv run vulture /scripts /tests --min-confidence 80
   GACH-validate:
     runs-on: ubuntu-latest
     steps:
