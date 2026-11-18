@@ -31,5 +31,7 @@ jobs:
     steps:
       - name: Print "Hello"
         run: echo "Hello"
+      - name: Print pwd
+        run: pwd
        
 
