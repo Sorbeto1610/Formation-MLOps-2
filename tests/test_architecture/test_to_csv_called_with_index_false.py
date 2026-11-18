@@ -37,4 +37,3 @@ def test_to_csv_called_with_index_false():
     # Then
     assert python_files, f"No Python files found in {PACKAGE_ROOT}"
     assert not violations, f"to_csv without index=False: {violations}"
-    
