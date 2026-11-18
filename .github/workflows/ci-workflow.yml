@@ -26,6 +26,8 @@ jobs:
         run: uv run pytest
       - name: Dead code detection
         run: uv run vulture ./scripts ./tests --min-confidence 80
+      - name: Code cyber bandit
+        run: uv run bandit -r ./formation_mlops_2 ./scripts ./tests -ll
   GACH-validate:
     runs-on: ubuntu-latest
     steps:
