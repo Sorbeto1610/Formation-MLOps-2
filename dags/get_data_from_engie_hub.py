@@ -1,5 +1,6 @@
 import os
 import sys
+import logging
 from datetime import datetime, timedelta
 
 from airflow.sdk import dag, task
@@ -17,6 +18,7 @@ from formation_mlops_2.data_loading_io import get_data_from_csv
 def data_generator():
     @task
     def get_data_from_csv_task():
+        logging.info("Reading")
         get_data_from_csv(train_data_path=TRAIN_DATA_PATH, data_folder=GENERATED_DATA_FOLDER)
 
     get_data_from_csv_task()
